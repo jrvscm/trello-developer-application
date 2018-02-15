@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { connect } from 'react-redux';
+import Board from './components/Board';
+import BoardInfo from './components/BoardInfo';
+import './reset.css';
 import './App.css';
 
 class App extends Component {
-  render() {
+
+	render() {
+
+  	const boardLists = this.props.lists.map((list, i) =>
+  		<Board
+  			className="board" 
+  			cards={list.cards}
+  			title={list.title} 
+  		/>
+    );
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      	<BoardInfo />
+      	<div className="inner-board-container">
+      		{boardLists}
+      	</div>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+	lists: state.Reducer.lists
+})
+
+export default connect(mapStateToProps)(App);
