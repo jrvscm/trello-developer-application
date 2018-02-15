@@ -12,6 +12,10 @@ export class ListForm extends React.Component {
       this.props.dispatch(hideListForm());
     }
 
+    closeNewList(e) {
+      this.props.dispatch(hideListForm());
+    }
+
     render() {
       let error;
         if (this.props.error) {
@@ -28,7 +32,7 @@ export class ListForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <label htmlFor="listTitle">List Title</label>
+                <label htmlFor="listTitle"aria-labelledby="New List"/>
                 <Field
                     component={Input}
                     type="text"
@@ -40,6 +44,7 @@ export class ListForm extends React.Component {
                 <button className={'list-submit'} disabled={this.props.pristine || this.props.submitting}>
                     Save
                 </button>
+                <button className={'close-btn'} onClick={(e) => this.closeNewList(e)}><i className="fas fa-times"></i></button>
             </form>
         );
     }
