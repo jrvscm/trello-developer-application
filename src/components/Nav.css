@@ -1,0 +1,25 @@
+.nav-container {
+	position: fixed;
+	display:flex;
+	align-items: center;
+	top:0;
+	right:0;
+	left:0;
+	height: 40px;
+	background-color: rgba(0,0,0,.15);
+}
+
+button.boards-btn {
+	background-color: rgba(255,255,255,.5);
+	height: 80%;
+	border:none;
+	margin: 10px;
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+button.boards-btn:hover {
+	background-color: rgba(255,255,255,.2);
+	cursor: pointer;
+}

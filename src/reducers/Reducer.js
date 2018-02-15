@@ -1,28 +1,45 @@
 const initialState = {
+	showListForm: false,
 	lists: [ 
-	{
-    title: 'To Do',
-    cards: [{
-    	text: 'Sample Card'
+		{
+    		title: 'To Do',
+    		cards: [{
+    		text: 'Schedule interview with Christopher'
+    		}]
+		}, 
+		{ 
+			title: 'Done',
+    		cards: [{
+    		text: 'Read unoriginal cover letters'
+    	},
+    	{
+    		text: 'Send rejection letters'
     	}]
-	}, 
-	{ 
-		title: 'Done',
-    	cards: [{
-    	text: 'Schedule Chris an interview'
-    	}]
-	}
-]}
+		},
+	]}
 
 
 
 const Reducer = (state = initialState, action) => {
 	switch(action.type) {
+
 		case 'ADD_LIST':
 		return {
-			...state
+			...state,
+			lists: [...state.lists, action.title]
 		}
 
+		case 'SHOW_LIST_FORM':
+		return {
+			...state,
+			showListForm: true
+		}
+
+		case 'HIDE_LIST_FORM':
+		return {
+			...state,
+			showListForm: false
+		}
 		default:
 			return state
 	}

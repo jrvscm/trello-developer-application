@@ -8,3 +8,38 @@
   margin: 0px 25px;
   display: flex;
 }
+
+button.add-list {
+  height: 40px;
+  width: 300px;
+  padding: 10px;
+  margin: 15px;
+  background-color: rgba(0,0,0,.15);
+  border: none;
+  border-radius: 5px;
+  color:rgba(255,255,255,.7);
+  text-align: left;
+  font-weight: bold;
+}
+
+button.add-list:hover {
+  cursor:pointer;
+  background-color: rgba(0,0,0,.3);
+}
+
+button.add-list:focus {
+  outline: none;
+}
+
+div.new-list-container {
+  height: 100%;
+  width: 300px;
+  background-color: #e2e4e6;
+  margin: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+div.new-list-container input:focus {
+  outline:none;
+}

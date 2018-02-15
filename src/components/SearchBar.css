@@ -1,0 +1,40 @@
+div.search {
+	background-color: rgba(255,255,255,.5);
+	height: 80%;
+	border:none;
+	margin: 10px;
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+div.search:hover {
+	background-color: rgba(255,255,255,.3);
+}
+
+div.search input {
+	height: 100%;
+	background-color: transparent;
+	color: white;
+	font-weight: bold;
+	border:none;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	padding-left: 10px;
+}
+
+div.search input:focus {
+	outline: none;
+}
+
+div.search button {
+	color: white;
+	background-color: transparent;
+	border:none;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+div.search button:hover {
+	cursor: pointer;
+}

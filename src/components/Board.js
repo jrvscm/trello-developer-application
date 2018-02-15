@@ -5,12 +5,12 @@ import './Board.css';
 class Board extends Component {
 
 	onClick(e) {
-		console.log('clicked')
+	
 	}
 
   	render() {
   		let cards = this.props.cards.map((card, i) =>
-  		<li key={i} className="card-li">
+  		<li key={i} i={i} className="card-li">
   			<Card text={card.text} />
   		</li>
   	)
@@ -20,8 +20,9 @@ class Board extends Component {
       	<h2 className="card-title">{this.props.title}</h2>
       		<ul className="cards">
       			{cards}
+            <li><button className="save-card-btn hidden" onClick={(e) => this.onSave(e)}>Save</button></li>
       		</ul>
-      	<button className="add-card-btn" onClick={(e) => this.onClick(e)}>Add a card...</button>
+      	<button className="add-card-btn"  onClick={(e) => this.onClick(e)}>Add a card...</button>
       </div>
     );
   }

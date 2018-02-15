@@ -1,5 +1,41 @@
 .board-info {
-	display:inline-flex;
+	display:flex;
+	align-items: center;
 	color:white;
-	margin-left:50px;
+	padding: 70px 25px 0px 25px;
+}
+
+.board-name {
+	font-size: 24px;
+	font-weight: bold;
+	font-style: italic;
+	color: rgba(255,255,255,.7);
+}
+
+.board-info li {
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 16px;
+}
+
+.board-name {
+	font-size: 24px;
+	font-style: italic;
+}
+
+.board-name:hover {
+	color: rgba(0,0,0,.2);
+}
+
+.board-info li:hover {
+	cursor: pointer;
+	color: rgba(0,0,0,.2);
+}
+
+.border-right {
+	border-right: 1px solid white;
+}
+
+.border-left {
+	border-left: 1px solid white;
 }
