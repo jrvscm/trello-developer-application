@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import { addList, hideListForm } from '../actions/index';
 import {required, nonEmpty} from '../validators';
 import './ListForm.css';
 
-export class ListForm extends React.Component {
+export class ListForm extends Component {
     onSubmit(values) {
       let newItem = {title: values.listTitle, cards: []};
       this.props.dispatch(addList(newItem));

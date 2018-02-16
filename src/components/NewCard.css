@@ -1,28 +1,22 @@
-.list-form {
+.CardForm {
 	text-align: left;
 	padding: 0px 10px;
 }
 
-label[for="listTitle"] {
-	display:block;
-	margin: 15px 0px;
-}
-
-#listTitle {
+#newCard {
 	box-sizing: border-box;
 	width: 100%;
 	background-color: #fff;
 	color: #4d4d4d;
 	min-height: 30px;
-	padding:10px 5px;
-	margin: 3px 0px;
+	padding:10px;
 	border-radius: 5px;
 	border:none;
 	border-bottom: 1px solid #d3d3d3;
 	font-size: 16px;
 }
 
-button.list-submit {
+button.card-submit {
 	padding: 5px 10px;
 	color:white;
 	background-color: rgb(90,172,68);
@@ -31,22 +25,7 @@ button.list-submit {
 	margin: 5px 0px;
 }
 
-button.list-submit:hover {
+button.card-submit:hover {
 	cursor:pointer;
 	background-color:rgb(90,162,10);
-}
-
-i.fa-times {
-	font-size: 16px;
-}
-
-button.close-btn {
-	border:none;
-	background-color: transparent;
-	color: #aaa;
-}
-
-button.close-btn:hover {
-	cursor: pointer;
-	color: #333;
 }

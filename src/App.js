@@ -4,24 +4,35 @@ import Board from './components/Board';
 import BoardInfo from './components/BoardInfo';
 import Navbar from './components/Nav';
 import ListForm from './components/ListForm';
-import { showListForm } from './actions';
+import { showListForm, showCardForm } from './actions';
 import './reset.css';
 import './App.css';
 
 class App extends Component {
-	onClick() {
+	onClick(e) {
 		this.props.dispatch(showListForm())
 	}
 
+  showForm(e) {
+    e.target.className = 'hidden';
+    const array = this.props.lists;
+    let newArray = JSON.parse(JSON.stringify(array));
+    newArray[e.target.id].showCardForm = true;
+    this.props.dispatch(showCardForm(newArray))
+  }
+
 	render() {
   	const boardLists = this.props.lists.map((list, i) =>
-  		<Board
-  			key={i}
-        i={i}
+     <div key={i} className="card-container">
+  		<Board index={i}
+        lists={this.props.lists}
+        list={list}
   			className="board" 
   			cards={list.cards}
   			title={list.title} 
   		/>
+      <button id={i} className={"add-card-btn"} onClick={(e) => this.showForm(e)}>Add a card...</button>
+    </div>
     );
 
     if(this.props.showListForm === true) {
@@ -46,7 +57,7 @@ class App extends Component {
         <BoardInfo />
         <div className="inner-board-container">
           {boardLists}
-          <button className="add-list" onClick={(e) => this.onClick(e)}>Add a list...</button>
+        <button className="add-list" onClick={(e) => this.onClick(e)}>Add a list...</button>
         </div>
       </div>
     );

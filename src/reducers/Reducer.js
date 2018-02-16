@@ -2,12 +2,14 @@ const initialState = {
 	showListForm: false,
 	lists: [ 
 		{
+			showCardForm: false,
     		title: 'To Do',
     		cards: [{
     		text: 'Schedule interview with Christopher'
     		}]
 		}, 
-		{ 
+		{ 	
+			showCardForm: false,
 			title: 'Done',
     		cards: [{
     		text: 'Read unoriginal cover letters'
@@ -16,7 +18,8 @@ const initialState = {
     		text: 'Send rejection letters'
     	}]
 		},
-	]}
+	]
+}
 
 
 
@@ -40,6 +43,13 @@ const Reducer = (state = initialState, action) => {
 			...state,
 			showListForm: false
 		}
+
+		case 'SHOW_CARD_FORM':
+		return {
+			...state,
+			lists: action.list
+		}
+
 		default:
 			return state
 	}

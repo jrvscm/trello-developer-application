@@ -38,3 +38,7 @@ button.save-card-btn:hover {
 .hidden {
 	display:none;
 }
+
+.show {
+	display:contents;
+}
