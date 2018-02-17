@@ -13,19 +13,19 @@ I'm sure that you receive hundreds of applications for these positions and my ex
 Recently I worked on a project called Habitualize. Habitualize is a full stack habit tracking application, built with React/Redux and Node.js. Habitualize provides users a way to create and track habits they find useful. Progress can be viewed through a current/best streak implementation and personalized charts and statistics. The technology used for this project was as follows:
 
 ### Frontend:
-React/Redux,
-JavaScript,
-HTML5,
-CSS3,
-Enzyme(testing),
-Continuous integration and deployment with TravisCI and Netlify
+ - React/Redux,
+ - JavaScript,
+ - HTML5,
+ - CSS3,
+ - Enzyme(testing),
+ - Continuous integration and deployment with TravisCI and Netlify
 
 ### Backend:
-Node.js (server),
-Express (server),
-MongoDB/Mongoose/Mlab (database),
-Mocha Chai (testing),
-Continuous integration and deployment with TravisCI and Heroku
+ - Node.js (server),
+ - Express (server),
+ - MongoDB/Mongoose/Mlab (database),
+ - Mocha Chai (testing),
+ - Continuous integration and deployment with TravisCI and Heroku
 
 If the credentials detailed in my attached résumé appear well suited to your needs, I would absolutely love the chance to learn more about Trello's goals and outline my strengths in person.
 
