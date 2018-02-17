@@ -1,6 +1,6 @@
 ## Cover Letter
 
-Dear Name Hiring Manager,
+### Dear Name Hiring Manager,
 
 I hope you enjoyed the Trello UI as much as I enjoyed building it. Hopefully it's the first project of many that I get to complete for Trello.
 
@@ -33,8 +33,8 @@ Thank you for your time and consideration, and I look forward to our conversatio
 
 Best Regards,
 
-Christopher Jarvis,
-307-680-6321
+Christopher Jarvis,<br>
+307-680-6321<br>
 chrisjarvisdev.com
 
 
