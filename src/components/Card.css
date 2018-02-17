@@ -33,3 +33,8 @@ li.card-li:hover {
 }
 
 
+@media only screen and (max-width: 600px) {
+	.card-container {
+		margin:0 auto;
+	}
+}

@@ -7,7 +7,8 @@
 .inner-board-container {
   margin: 0px 25px;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 
 button.add-list {
