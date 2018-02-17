@@ -7,6 +7,7 @@ class Navbar extends Component {
       <nav className="nav-container">
       	<button className="boards-btn"><i className="fas fa-columns"></i> Boards</button>
       	<SearchBar />
+      	<div className="user-circle">CJ</div>
       </nav>
     );
   }
