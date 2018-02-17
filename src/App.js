@@ -32,6 +32,7 @@ class App extends Component {
       <div className="App">
         <Navbar />
       	<BoardInfo />
+
       	<div className="inner-board-container">
       		{boardLists}
 

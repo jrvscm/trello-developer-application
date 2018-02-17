@@ -4,7 +4,7 @@ class BoardInfo extends Component {
 
   render() {
     return (
-    <div>
+    <div className="board-info-div">
       <ul className="board-info">
       	<li><h2 className="board-name">Hire Chris board</h2></li>
       	<li className="border-right border-left"><a href="http://www.chrisjarvisdev.com/" target="_blank" rel="noopener noreferrer">Portfolio</a></li>
