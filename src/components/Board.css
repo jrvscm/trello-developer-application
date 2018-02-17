@@ -35,6 +35,19 @@ button.save-card-btn:hover {
 	cursor: pointer;
 }
 
+.delete-board {
+	font-size: 20px;
+	color: rgba(0,0,0,.3);
+	display: inline-block;
+	float: right;
+	cursor: pointer;
+	margin-right: 15px;
+}
+
+.delete-board:hover {
+	color: #333;
+}
+
 .hidden {
 	display:none;
 }
@@ -42,3 +55,4 @@ button.save-card-btn:hover {
 .show {
 	display:contents;
 }
+

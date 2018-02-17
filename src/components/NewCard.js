@@ -46,7 +46,7 @@ export class CardForm extends Component {
         return (
         <div className={isShown ? 'shown' : 'hidden'}>
             <form
-                autocomplete="off"
+                autoComplete="off"
                 className="CardForm"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)

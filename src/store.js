@@ -10,7 +10,7 @@ const store = createStore(
     	Reducer: Reducer,
     	form: formReducer
     }),
-    compose(middleware)
+    compose(middleware,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 );
 
 export default store;

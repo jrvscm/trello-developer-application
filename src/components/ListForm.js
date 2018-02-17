@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
-import { addList, hideListForm } from '../actions/index';
+import { hideListForm, showCardForm } from '../actions/index';
 import {required, nonEmpty} from '../validators';
 import './ListForm.css';
 
 export class ListForm extends Component {
     onSubmit(values) {
-      let newItem = {title: values.listTitle, cards: []};
-      this.props.dispatch(addList(newItem));
-      this.props.dispatch(hideListForm());
+        let newItem = {
+            showCardForm: false,
+            title: values.listTitle, 
+            cards: []
+        };
+        const array = this.props.lists;
+
+        let newArray = JSON.parse(JSON.stringify(array));
+            newArray.push(newItem);
+            this.props.dispatch(showCardForm(newArray));
+            this.props.dispatch(hideListForm());
     }
 
     closeNewList(e) {
@@ -27,7 +35,7 @@ export class ListForm extends Component {
         }
         return (
             <form
-                autocomplete="off"
+                autoComplete="off"
                 className="list-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)

@@ -36,7 +36,7 @@ class App extends Component {
       		{boardLists}
 
             <div className="new-list-container">
-              <ListForm />
+              <ListForm lists={this.props.lists}/>
             </div>
 
       	</div>

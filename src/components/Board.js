@@ -7,6 +7,13 @@ import './Board.css';
 
 class Board extends Component {
 
+  deleteBoard(e) {
+    const array = this.props.lists;
+    let newArray = JSON.parse(JSON.stringify(array));
+        newArray.splice(this.props.i,1);
+        this.props.dispatch(showCardForm(newArray));
+  }
+
   showForm(e) {
     const array = this.props.lists;
     let newArray = JSON.parse(JSON.stringify(array));
@@ -26,6 +33,7 @@ class Board extends Component {
     if(this.props.list.showCardForm === false) {
     return(
       <div>
+      <i className="fas fa-times delete-board" onClick={(e) => this.deleteBoard(e)}></i>
         <h2 className="card-title">{this.props.title}</h2>
           <ul className="cards">
             {cards}
@@ -37,6 +45,7 @@ class Board extends Component {
     else {
     return(
       <div>
+      <i className="fas fa-times delete-board" onClick={(e) => this.deleteBoard(e)}></i>
         <h2 className="card-title">{this.props.title}</h2>
           <ul className="cards">
             {cards}
