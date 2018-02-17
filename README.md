@@ -1,6 +1,6 @@
 ## Cover Letter
 
-### Dear Name Hiring Manager,
+### Dear Hiring Manager,
 
 I hope you enjoyed the Trello UI as much as I enjoyed building it. Hopefully it's the first project of many that I get to complete for Trello.
 
