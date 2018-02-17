@@ -1,23 +1,36 @@
 import React, { Component } from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+import {Field, reduxForm, focus, reset} from 'redux-form';
 import Input from './input';
-import { addCard, hideCardForm, showCardForm} from '../actions/index';
+import {  showCardForm } from '../actions/index';
 import {required, nonEmpty} from '../validators';
 import './NewCard.css';
 
 export class CardForm extends Component {
-    onSubmit(values) {
-        this.props.dispatch(addCard(values.newCard));
-        this.props.dispatch(hideCardForm());
-    }
 
-    closeNewCard(e) {
+    onSubmit(values) {
+        const list = this.props.list;
         const array = this.props.lists;
         let newArray = JSON.parse(JSON.stringify(array));
-    
-        //newArray[e.target.id].showCardForm = false;
-        console.log(this.props.list)
-        //this.props.dispatch(showCardForm(newArray))
+        let newList = JSON.parse(JSON.stringify(list));
+        let ind = this.props.cardindex.split('').slice(5);
+            ind = parseInt(ind, 10);
+            newList.cards.push({text: values.newCard}); 
+            newArray[ind].cards = newList.cards;
+            newArray[ind].showCardForm = false;
+            this.props.dispatch(showCardForm(newArray))
+            this.props.dispatch(reset('CardForm'))
+        }
+
+    closeNewCard(e) {
+        let ind = this.props.cardindex.split('').slice(5);
+        ind = parseInt(ind, 10);
+
+        const array = this.props.lists;
+        let newArray = JSON.parse(JSON.stringify(array));
+            //toggle to close the current addcard form
+        newArray[ind].showCardForm = false;
+        this.props.dispatch(showCardForm(newArray))
+        this.props.dispatch(reset('CardForm'))
     }
 
     render() {
@@ -33,6 +46,7 @@ export class CardForm extends Component {
         return (
         <div className={isShown ? 'shown' : 'hidden'}>
             <form
+                autocomplete="off"
                 className="CardForm"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
@@ -50,7 +64,10 @@ export class CardForm extends Component {
                 <button className={'card-submit'} disabled={this.props.pristine || this.props.submitting}>
                     Save
                 </button>
-                <button className={'close-btn'} onClick={(e) => this.closeNewCard(e)}><i className="fas fa-times"></i></button>
+                <button index={this.props.cardindex} className={'close-btn'}
+                    onClick={(e) => this.closeNewCard(e)}>
+                        <i className="fas fa-times"></i>
+                </button>
             </form>
         </div>
         );

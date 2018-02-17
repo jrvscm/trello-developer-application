@@ -25,8 +25,28 @@ export const addList = (title) => ({
 	title
 })
 
-const ADD_CARD = 'ADD_CARD'
-export const addCard = (text) => ({
-	type:ADD_CARD,
-	text
+const SHOW_ADDCARD_BTN = 'SHOW_ADDCARD_BTN'
+export const showAddCardBtn = (id) => ({
+	type: SHOW_ADDCARD_BTN,
+	id
 })
+
+const UPDATE_CURRENT_CLICKED = 'UPDATE_CURRENT_CLICKED'
+export const updateCurrentClicked = (id) => ({
+	type:UPDATE_CURRENT_CLICKED,
+	id
+})
+
+const SET_MODAL_SHOW = 'SET_MODAL_SHOW'
+export const setModalShow = () => ({
+	type: SET_MODAL_SHOW,
+	show: true
+})
+
+const SET_CLOSE_MODAL = 'SET_CLOSE_MODAL'
+export const setCloseModal = () => ({
+	type: SET_CLOSE_MODAL,
+	show: false
+})
+
+

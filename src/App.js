@@ -4,7 +4,7 @@ import Board from './components/Board';
 import BoardInfo from './components/BoardInfo';
 import Navbar from './components/Nav';
 import ListForm from './components/ListForm';
-import { showListForm, showCardForm } from './actions';
+import { showListForm } from './actions';
 import './reset.css';
 import './App.css';
 
@@ -13,25 +13,17 @@ class App extends Component {
 		this.props.dispatch(showListForm())
 	}
 
-  showForm(e) {
-    e.target.className = 'hidden';
-    const array = this.props.lists;
-    let newArray = JSON.parse(JSON.stringify(array));
-    newArray[e.target.id].showCardForm = true;
-    this.props.dispatch(showCardForm(newArray))
-  }
-
 	render() {
-  	const boardLists = this.props.lists.map((list, i) =>
+  	const boardLists = this.props.lists.map((list, i) => 
      <div key={i} className="card-container">
-  		<Board index={i}
+  		<Board
         lists={this.props.lists}
         list={list}
   			className="board" 
   			cards={list.cards}
   			title={list.title} 
+        i={i}
   		/>
-      <button id={i} className={"add-card-btn"} onClick={(e) => this.showForm(e)}>Add a card...</button>
     </div>
     );
 
@@ -67,7 +59,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
 	lists: state.Reducer.lists,
-  showListForm: state.Reducer.showListForm
+  showListForm: state.Reducer.showListForm,
+  currAddCardClickedBtn: state.Reducer.currAddCardClickedBtn
 })
 
 export default connect(mapStateToProps)(App);

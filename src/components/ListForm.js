@@ -27,6 +27,7 @@ export class ListForm extends Component {
         }
         return (
             <form
+                autocomplete="off"
                 className="list-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
